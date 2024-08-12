@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // set my personal access
             MyAccountSeeder::class,
+            SystemSeeder::class,
+            RolesSeeder::class,
+            RolesUsersSeeder::class
         ]);
 
         User::factory(5)->create();
