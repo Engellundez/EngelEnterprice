@@ -10,9 +10,7 @@ class AdminController extends Controller
 {
 	public function index()
 	{
-		$published_programs = System::Publish()->get();
-		$publish_programs = System::all();
-		return view('admin.dashboard', compact('publish_programs', 'published_programs'));
+		return view('admin.dashboard');
 	}
 
 	public function update_programs(Request $request)
@@ -30,5 +28,17 @@ class AdminController extends Controller
 			DB::rollBack();
 			throw $th;
 		}
+	}
+
+	public function get_programs_publish()
+	{
+		$programs_publish = System::Publish()->get();
+		return response()->JSON($programs_publish);
+	}
+
+	public function get_programs()
+	{
+		$programs = System::all();
+		return response()->JSON($programs);
 	}
 }

@@ -1,3 +1,15 @@
+.swal2-title {
+	color: rgb(243, 244, 246) !important;
+}
+
+.swal2-modal {
+	background-color: rgb(31, 41, 55) !important;
+}
+
+.swal2-html-container {
+	color: rgb(156, 163, 175) !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

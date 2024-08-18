@@ -34,9 +34,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 	Route::get('/programs', [ProgramController::class, 'index'])->name('program.index');
 });
 
-Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
-	Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.index');
-	Route::put('/update_programs', [AdminController::class, 'update_programs'])->name('admin.update_programs');
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+	Route::get('/dashboard', [AdminController::class, 'index'])->name('index');
+	Route::put('/update_programs', [AdminController::class, 'update_programs'])->name('update_programs');
+
+	Route::get('/programs', [AdminController::class, 'get_programs'])->name('get_programs');
+	Route::get('/programs_publish', [AdminController::class, 'get_programs_publish'])->name('get_programs_publish');
 });
 
 require __DIR__ . '/auth.php';
