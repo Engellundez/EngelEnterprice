@@ -25,9 +25,7 @@
 
 	<script defer>
 		document.onreadystatechange = function() {
-			console.log('entra');
 			if (document.readyState === 'complete') {
-				console.log('si esta en complete');
 				var callback = function(e) {
 					console.log("🚀 ~ callback ~ e:", e)
 					document.getElementById("nuevo_registro").innerHTML += `<p>Nuevo registro recibido</p>`
